@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is JAX-WS RI 2.2.9-b130926.1035 svn-revision#5f6196f2b90e9460065a4c2f4e30e065b245e51e. --><xs:schema xmlns:tns="http://ws.fernando.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://ws.fernando.com/">
+
+<xs:complexType name="usuario" abstract="true">
+<xs:sequence>
+<xs:element name="nombre" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cliente">
+<xs:complexContent>
+<xs:extension base="tns:usuario">
+<xs:sequence></xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="artista">
+<xs:complexContent>
+<xs:extension base="tns:usuario">
+<xs:sequence></xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="usuarioArray" final="#all">
+<xs:sequence>
+<xs:element name="item" type="tns:usuario" minOccurs="0" maxOccurs="unbounded" nillable="true"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="clienteArray" final="#all">
+<xs:sequence>
+<xs:element name="item" type="tns:cliente" minOccurs="0" maxOccurs="unbounded" nillable="true"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="artistaArray" final="#all">
+<xs:sequence>
+<xs:element name="item" type="tns:artista" minOccurs="0" maxOccurs="unbounded" nillable="true"></xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
